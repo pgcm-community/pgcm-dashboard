@@ -1,0 +1,11 @@
+.nuxt
+
+/dist/*
+.locals
+.output.js
+/node_modules/**
+
+**/*.svg
+**/*.sh
+
+/public/*
