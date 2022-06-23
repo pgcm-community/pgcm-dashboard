@@ -1,4 +1,8 @@
 {
+  "name": "pgcm-dashboard",
+  "version": "0.0.1",
+  "author": "PGCM",
+  "description": "PGCM Dashboard",
   "private": true,
   "scripts": {
     "build": "nuxt build",

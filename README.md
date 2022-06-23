@@ -1,42 +1,19 @@
-# Nuxt 3 Minimal Starter
+## pgcm-dashboard  
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+#### 一个程序员社区的前台
 
-## Setup
+#### 使用 `nuxt3` + `typescript` 编写
 
-Make sure to install the dependencies:
+### 功能
+- [ ] 框架  
+- [ ] 首页
+- [ ] 用户模块  
+- [ ] 技术模块  
+- [ ] 评论模块
+- 功能仍在新增
 
-```bash
-# yarn
-yarn install
+---
+也是尝试使用 `nuxt3`构建可能存在部分问题待后续发现  
+一些比较有意思的问题， 解决后我会放到我的博客上
 
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+补充: 前台直接就开源了, 后台不做开源, 代码水平一般
