@@ -1,7 +1,9 @@
 <template>
-  <header> 这是一个头部 </header>
+  <header>这是一个头部</header>
 </template>
 
 <script setup lang="ts" name="Header"></script>
 
-<style scoped></style>
+<style scoped lang="scss">
+  @import './header.scss';
+</style>
