@@ -6,6 +6,9 @@
     "module": "esnext",
     "strict": true,
     "sourceMap": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "paths": {
+      "@/*": ["/*"],
+    }
   }
 }

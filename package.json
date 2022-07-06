@@ -18,9 +18,12 @@
     "vite-plugin-vue-setup-extend": "^0.4.0"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "element-plus": "^2.2.6",
+    "mockjs": "^1.1.0",
     "unplugin-auto-import": "^0.9.1",
     "unplugin-icons": "^0.14.6",
-    "unplugin-vue-components": "^0.20.1"
+    "unplugin-vue-components": "^0.20.1",
+    "vite-plugin-mock": "^2.9.6"
   }
 }

@@ -1,0 +1,10 @@
+.pgcm-body {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(200px, 400px) 1fr;
+}
+
+main {
+  background: rgba(250, 250, 250, 1);
+}
