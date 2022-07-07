@@ -1,13 +1,13 @@
 import Request from '@/utils/request'
 
 enum Api {
-  Login= '/user/login',
+  Login = '/user/login',
   Logout = '/user/logout',
-  GetUserInfo = '/user/getUserInfo',
+  GetUserInfo = '/user/getUserInfo'
 }
 interface LoginParams {
-  username: string;
-  password: string;
+  username: string
+  password: string
 }
 
 export function login(params: LoginParams) {

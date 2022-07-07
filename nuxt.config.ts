@@ -5,7 +5,22 @@ import Components from 'unplugin-vue-components/vite'
 
 const lifecycle = process.env.npm_lifecycle_event
 
+const setName = process.env.GLOBAL_TITLE
+
 export default defineNuxtConfig({
+  head: {
+    title: setName,
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=0' },
+      { hid: 'description', name: 'description', content: '' },
+      { name: 'format-detection', content: 'telephone=no' }
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }]
+  },
+  alias: {
+    '@/*': './*'
+  },
   typescript: {
     strict: true
   },
@@ -16,14 +31,6 @@ export default defineNuxtConfig({
   // css
   css: ['~/assets/scss/index.scss'],
   vite: {
-    resolve: {
-      alias: [
-        {
-          find: /@\//,
-          replacement: '/'
-        }
-      ]
-    },
     plugins: [
       VueSetupExtend(),
       Components({
