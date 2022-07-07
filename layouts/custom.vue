@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <Header />
+  <div class="pgcm-body">
+    <aside>
+      <PAside />
+    </aside>
     <main>
       <slot />
     </main>
@@ -8,5 +10,9 @@
 </template>
 
 <script setup lang="ts">
-  import Header from './components/Header.vue'
+  import PAside from './components/aside/index.vue'
 </script>
+
+<style scoped>
+  @import '../styles/layout.scss';
+</style>

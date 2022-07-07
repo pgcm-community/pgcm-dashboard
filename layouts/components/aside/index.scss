@@ -1,0 +1,77 @@
+.aside-container {
+  background: rgba(247, 247, 247, 1);
+  height: 100%;
+}
+.aside-main {
+  padding: 40px 30px;
+  .header {
+  }
+  .title {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    font-size: 33px;
+    font-weight: bold;
+    height: 38px;
+    margin-bottom: 23px;
+    .icon {
+      padding: 8px;
+    }
+  }
+}
+
+.tag {
+  height: 46px;
+  display: flex;
+  justify-content: space-between;
+  line-height: 46px;
+
+  .icon {
+    padding: 0 20px;
+    height: 100%;
+  }
+  .p-icon {
+    line-height: 46px;
+
+    span {
+      font-size: 18px;
+    }
+  }
+
+  .active {
+    max-width: 95px;
+    padding: 0 9px;
+    background: rgba(255, 255, 255, 1);
+    border: 0.3px solid rgba(161, 161, 161, 1);
+    border-radius: 6px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
+  }
+}
+
+.content {
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 16px 0;
+    font-weight: 400;
+    height: 38px;
+
+    span:first-child {
+      font-size: 24px;
+    }
+    .p-icon {
+      font-size: 16px;
+      line-height: 38px;
+    }
+  }
+
+  .list {
+    .col {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 18px;
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+}
