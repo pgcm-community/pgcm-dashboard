@@ -8,7 +8,7 @@ const request = (url: string, options?: any): Promise<any> => {
   // const { $config, $router } = useNuxtApp()
   // const reqUrl = $config.baseURL + url
   const reqUrl = url
-  console.log(options);
+  console.log(options)
 
   return new Promise((resolve, reject) => {
     useFetch(reqUrl, { ...options })
@@ -33,6 +33,8 @@ const request = (url: string, options?: any): Promise<any> => {
       })
   })
 }
+
+// todo: azure 密码RY57A7I7341MHK1H$
 
 export default new (class Http {
   get(url: string, params?: any): Promise<any> {

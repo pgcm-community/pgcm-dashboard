@@ -6,13 +6,15 @@
         <span>属于开发者的交流社区</span>
       </div>
       <div class="tag">
-        <div :class="{'active': type === 1 }" @click="loginType(1)">账密登录</div>
-        <div :class="{'active': type === 2 }" @click="loginType(2)">验证码登录</div>
-        <div :class="{'active': type === 3 }" @click="loginType(3)">扫码登录</div>
+        <div :class="{ active: type === 1 }" @click="loginType(1)">账密登录</div>
+        <div :class="{ active: type === 2 }" @click="loginType(2)">验证码登录</div>
+        <div :class="{ active: type === 3 }" @click="loginType(3)">扫码登录</div>
       </div>
       <div v-show="type === 1">
-        <input type="text" placeholder="请输入账号" />
-        <input type="password" placeholder="请输入密码" />
+        <el-input type="text" placeholder="请输入账号">
+          <template #prefix> </template>
+        </el-input>
+        <el-input type="password" placeholder="请输入密码" />
       </div>
       <div v-show="type === 2">
         <input type="text" placeholder="请输入手机号" />
@@ -22,7 +24,7 @@
         <button>登录</button>
         <div>
           <button>找回密码</button>
-<!--          <button>zhanghao</button>-->
+          <!--          <button>zhanghao</button>-->
         </div>
       </div>
       <div>
@@ -31,7 +33,6 @@
       <div>
         <div>
           <span>没有 PGCM 账号?</span>
-<!--          <span>注册账号</span>-->
           <el-button>注册账号</el-button>
         </div>
         <div>去注册</div>
@@ -53,7 +54,8 @@
 
 <script setup lang="ts">
   import { ref } from 'vue'
-  import { ElButton } from 'element-plus'
+  import { ElButton, ElInput } from 'element-plus'
+  import { login } from '../../composables/api'
 
   const show = ref<boolean>(false)
 
@@ -62,6 +64,13 @@
   const loginType = (data: number) => {
     type.value = data
   }
+  const form = {
+    username: '',
+    password: '',
+    captcha: '',
+    type: 1
+  }
+  // const getLogin = await login()
 </script>
 
 <style scoped lang="scss">

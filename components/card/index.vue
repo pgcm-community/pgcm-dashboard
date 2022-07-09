@@ -1,6 +1,8 @@
 <template>
   <div :class="['p-card']" :style="{ padding }">
-    <div class="image"></div>
+    <div v-if="image" class="image">
+      <el-image :src="image" />
+    </div>
     <div class="p-card-main">
       <div class="p-card-header">
         <slot name="header" />
@@ -16,6 +18,7 @@
 </template>
 
 <script setup lang="ts" name="PCard">
+  import { ElImage } from 'element-plus'
   import { Props } from './interface'
 
   const props = defineProps<Props>()

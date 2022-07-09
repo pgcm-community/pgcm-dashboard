@@ -8,8 +8,8 @@ const lifecycle = process.env.npm_lifecycle_event
 const setName = process.env.GLOBAL_TITLE
 
 export default defineNuxtConfig({
-  head: {
-    title: setName,
+  meta: {
+    titleTemplate: setName,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=0' },
@@ -20,6 +20,9 @@ export default defineNuxtConfig({
   },
   alias: {
     '@/*': './*'
+  },
+  nitro: {
+    preset: 'azure_functions'
   },
   typescript: {
     strict: true

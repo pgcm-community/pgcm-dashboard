@@ -1,3 +1,8 @@
+.login-container {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.26);
+  background: url(https://img.js.design/assets/img/62b94843217cf435e0c6ab2e.webp);
+}
 .login-form {
   max-width: 507px;
   height: 757px;
@@ -54,4 +59,7 @@
       box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
     }
   }
+}
+.el-input ::v-deep.el-input__inner {
+  border: 1.5px solid rgba(171, 171, 171, 1);
 }
