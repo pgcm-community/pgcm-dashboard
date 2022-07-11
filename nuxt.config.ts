@@ -21,9 +21,6 @@ export default defineNuxtConfig({
   alias: {
     '@/*': './*'
   },
-  nitro: {
-    preset: 'azure_functions'
-  },
   typescript: {
     strict: true
   },

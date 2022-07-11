@@ -5,8 +5,9 @@
   "description": "PGCM Dashboard",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
+    "bootstrap": "pnpm i --shamefully-hoist",
     "dev": "nuxt dev",
+    "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "lint": "prettier --write ."

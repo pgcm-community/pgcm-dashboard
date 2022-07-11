@@ -6,7 +6,12 @@
     "module": "esnext",
     "strict": true,
     "sourceMap": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
+    "types": [
+      "element-plus/global",
+    ],
     "paths": {
       "@/*": ["/*"]
     }
