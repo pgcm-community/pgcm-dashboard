@@ -7,6 +7,7 @@
   "scripts": {
     "bootstrap": "pnpm i --shamefully-hoist",
     "dev": "nuxt dev",
+    "start:prod": "nuxt dev --env prod",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
