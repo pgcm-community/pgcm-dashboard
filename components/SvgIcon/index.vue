@@ -41,7 +41,12 @@
 <style lang="scss" scoped>
   @font-face {
     font-family: 'p-icon';
-    src: url('./assets/icomoon.ttf') format('truetype');
+    src: url('../../assets/fonts/icomoon.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'p-icon';
+    src: url('../../assets/fonts/icomoon2.ttf') format('truetype');
   }
 
   .p-icon {

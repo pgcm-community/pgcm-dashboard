@@ -11,5 +11,8 @@ export default {
   message: '\ue909',
   theme: '\ue90a',
   hint: '\ue90b',
-  setting: '\ue90c'
+  setting: '\ue90c',
+  allect: '\ue90d',
+  givelike: '\ue90e',
+  eyes: '\ue90f'
 }
