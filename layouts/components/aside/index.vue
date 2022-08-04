@@ -15,16 +15,16 @@
             :key="index"
             :class="{ active: active === item.id, icon: true }"
           >
-            <svg-icon :icon="item.icon" size="18px">
+            <SvgIcon :icon="item.icon" size="18px" @click="handleType(item.id)">
               <span v-show="active === item.id">{{ item.name }}</span>
-            </svg-icon>
+            </SvgIcon>
           </div>
         </div>
       </div>
       <div class="content">
         <div class="content-header">
           <span>当下热门模块</span>
-          <svg-icon icon="setting">所有模块</svg-icon>
+          <SvgIcon icon="setting">所有模块</SvgIcon>
         </div>
         <div class="list">
           <div class="col" v-for="o in 6">
@@ -38,7 +38,6 @@
 
 <script setup lang="ts">
   import { ref, reactive } from 'vue'
-  import Search from '@/components/Search/index.vue'
 
   const active = ref(1)
   const list = reactive([
@@ -47,6 +46,10 @@
     { id: 3, name: '问题', icon: 'book' },
     { id: 4, name: '求职', icon: 'work' }
   ])
+
+  const handleType = (type: number) => {
+    active.value = type
+  }
 </script>
 
 <style scoped lang="scss">

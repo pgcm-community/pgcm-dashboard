@@ -1,11 +1,11 @@
 <template>
   <div class="search">
-    <svg-icon icon="search" :size="iconSize" @click.stop="handleOpen()" />
+    <SvgIcon icon="search" :size="iconSize" @click.stop="handleOpen()" />
 
     <div v-if="show" class="search-dialog">
       <div class="p-input">
-        <input type="text" @focus="handleInputFocus" />
-        <svg-icon icon="search" />
+        <input v-model="counter" type="text" @focus="handleInputFocus" />
+        <SvgIcon icon="search" />
       </div>
 
       <div v-show="isFocus" class="content">
@@ -16,7 +16,9 @@
         <div class="question">
           <div class="question-title">问题</div>
         </div>
-        <div class="answer"></div>
+        <div class="answer">
+          <p-card> </p-card>
+        </div>
       </div>
     </div>
   </div>
@@ -24,6 +26,7 @@
 
 <script setup lang="ts">
   import { ref } from 'vue'
+  import PCard from '../PCard/index.vue'
 
   const props = defineProps({
     iconSize: {
@@ -42,7 +45,10 @@
     show.value = true
   }
 
+  const counter = useCookie('counter')
+
   function handleInputFocus(evt: FocusEvent) {
+    counter.value = counter.value || Math.round(Math.random() * 1000)
     console.log('获取到焦点了', evt)
     isFocus.value = true
   }
