@@ -11,3 +11,5 @@
 **/*.sh
 
 /public/*
+
+pnpm-lock.yaml

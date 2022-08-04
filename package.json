@@ -22,6 +22,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "element-plus": "^2.2.6",
+    "highlight.js": "^11.6.0",
     "mockjs": "^1.1.0",
     "unplugin-auto-import": "^0.9.1",
     "unplugin-icons": "^0.14.6",
