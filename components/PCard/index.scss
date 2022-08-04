@@ -1,0 +1,31 @@
+@import 'styles/main';
+
+.p-card {
+  background: rgba(255, 255, 255, 1);
+  border-radius: $--default-border-radius;
+  padding: 16px;
+  display: flex;
+
+  .card-aside {
+    flex: 1 1 auto;
+    margin-right: 20px;
+    width: 250px;
+
+    .el-image {
+      height: 100%;
+      cursor: pointer;
+    }
+  }
+  .p-card-header {
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .p-card-content {
+    margin: 6px 0 7px;
+    font-size: 16px;
+    text-overflow: ellipsis;
+  }
+}

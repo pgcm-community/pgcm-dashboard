@@ -9,9 +9,7 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
-    "types": [
-      "element-plus/global",
-    ],
+    "types": ["element-plus/global"],
     "paths": {
       "@/*": ["/*"]
     }
