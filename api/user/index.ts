@@ -21,3 +21,8 @@ export function getUserInfo() {
 export function logout() {
   return Request.get(Api.Logout)
 }
+
+// 测试本地 mock
+export function articleMoudleList(params: any) {
+  return Request.get('/article/module/list', params)
+}
