@@ -21,6 +21,10 @@ export const Props = {
     type: String,
     default: (): string => ''
   },
+  fontcolor: {
+    type: String,
+    default: (): string => ''
+  },
   size: {
     type: String as PropType<tagSize>,
     default: (): tagSize => 'small',

@@ -20,7 +20,7 @@
   const props = defineProps(Props)
   const emits = defineEmits(Emits)
 
-  const style = {
+  let style = {
     borderRadius: props.round
   }
 
@@ -32,10 +32,23 @@
     }
   ])
 
+  if (props.color || props.fontcolor) {
+    style = Object.assign(
+      style,
+      {
+        backgroundColor: props.color,
+        color: props.fontcolor || '#fff',
+        border: `1px solid ${props.color}`
+      }
+    )
+  }
+
   const handleClose = (evt: Event): void => {
     evt.stopPropagation()
     emits('close', evt)
   }
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+  @import "./index.scss";
+</style>
