@@ -3,11 +3,7 @@
     <span class="p-text">
       <slot />
 
-      <SvgIcon
-        v-if="closable"
-        @click="handleClose"
-      >x
-      </SvgIcon>
+      <SvgIcon v-if="closable" @click="handleClose">x </SvgIcon>
     </span>
   </div>
 </template>
@@ -33,14 +29,11 @@
   ])
 
   if (props.color || props.fontcolor) {
-    style = Object.assign(
-      style,
-      {
-        backgroundColor: props.color,
-        color: props.fontcolor || '#fff',
-        border: `1px solid ${props.color}`
-      }
-    )
+    style = Object.assign(style, {
+      backgroundColor: props.color,
+      color: props.fontcolor || '#fff',
+      border: `1px solid ${props.color}`
+    })
   }
 
   const handleClose = (evt: Event): void => {
@@ -50,5 +43,5 @@
 </script>
 
 <style scoped lang="scss">
-  @import "./index.scss";
+  @import './index.scss';
 </style>

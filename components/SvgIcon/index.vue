@@ -1,8 +1,8 @@
 <template>
-  <div class="p-icon" @click="onClick" :style="{ color: color, 'font-size': size }">
+  <i class="p-icon" :style="{ color: color, 'font-size': size }" @click="onClick">
     {{ icons[icon] }}
     <slot />
-  </div>
+  </i>
 </template>
 
 <script setup lang="ts" name="SvgIcon">

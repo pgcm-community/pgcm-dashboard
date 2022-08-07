@@ -14,5 +14,6 @@ export default {
   setting: '\ue90c',
   allect: '\ue90d',
   givelike: '\ue90e',
-  eyes: '\ue90f'
+  eyes: '\ue90f',
+  back: '\ue911'
 }
