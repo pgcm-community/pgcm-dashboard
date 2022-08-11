@@ -1,8 +1,12 @@
 <template>
-  <i class="p-icon" :style="{ color: color, 'font-size': size }" @click="onClick">
-    {{ icons[icon] }}
+  <div
+    :class="['p-icon']"
+    :style="{ color: color, 'font-size': size }"
+    @click="onClick"
+  >
+    <i>{{ icons[icon] }}</i>
     <slot />
-  </i>
+  </div>
 </template>
 
 <script setup lang="ts" name="SvgIcon">
@@ -26,9 +30,11 @@
     },
     icon: {
       type: String,
-      required: true
+      required: true,
+      default: ''
     }
   })
+
   const emits = defineEmits({
     click: (event: Event): Event => event
   })
@@ -38,24 +44,24 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @font-face {
     font-family: 'p-icon';
-    src: url('../../assets/fonts/icomoon.ttf') format('truetype');
-  }
-
-  @font-face {
-    font-family: 'p-icon';
-    src: url('../../assets/fonts/icomoon2.ttf') format('truetype');
+    src: url('../../assets/fonts/icomoon Regular.ttf') format('truetype');
   }
 
   .p-icon {
     font-family: 'p-icon' !important;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  i {
+    cursor: pointer;
     line-height: 1;
     font-style: normal;
-    font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    cursor: pointer;
+    margin-right: 8px;
   }
 </style>
