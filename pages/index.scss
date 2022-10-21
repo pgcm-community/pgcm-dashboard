@@ -6,12 +6,35 @@
       color: rgba(0, 0, 0, 1);
     }
 
+    .row-module {
+      margin-top: 20px;
+
+      &-header {
+        font-size: 25px;
+        font-weight: 700;
+        color: rgba(0, 0, 0, 1);
+      }
+    }
+
     .col-header-spec {
-      font-size: 26px;
+      margin-top: 20px;
+      font-size: 25px;
       font-weight: 600;
       color: rgba(0, 0, 0, 1);
       display: flex;
       justify-content: space-between;
+
+      .right {
+        padding: 0 8px;
+        width: 156px;
+        height: 38px;
+        background: #f1f6ffff;
+        font-size: 16px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+      }
     }
 
     .col-content {

@@ -1,9 +1,5 @@
 <template>
-  <div
-    :class="['p-icon']"
-    :style="{ color: color, 'font-size': size }"
-    @click="onClick"
-  >
+  <div :class="['p-icon']" :style="{ color: color, 'font-size': size }" @click="onClick">
     <i>{{ icons[icon] }}</i>
     <slot />
   </div>
@@ -47,7 +43,7 @@
 <style lang="scss">
   @font-face {
     font-family: 'p-icon';
-    src: url('../../assets/fonts/icomoon Regular.ttf') format('truetype');
+    src: url('@/assets/fonts/icomoon-Regular.ttf') format('truetype');
   }
 
   .p-icon {

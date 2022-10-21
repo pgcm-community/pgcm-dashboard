@@ -8,18 +8,24 @@
     "bootstrap": "pnpm i --shamefully-hoist",
     "dev": "nuxt dev --mode dev",
     "start:prod": "nuxt dev --mode prod",
+    "server": "node .output/server/index.mjs",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "lint": "prettier --write ."
+    "lint": "prettier --write .",
+    "info": "nuxt info"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.4",
+    "@types/node": "^18.11.2",
+    "nuxt": "3.0.0-rc.12",
     "prettier": "^2.7.1",
     "sass": "^1.53.0",
     "vite-plugin-vue-setup-extend": "^0.4.0"
   },
   "dependencies": {
+    "@nuxt/kit": "3.0.0-rc.12",
+    "@pinia/nuxt": "^0.4.0",
+    "@vueuse/motion": "^2.0.0-beta.23",
     "axios": "^0.27.2",
     "element-plus": "^2.2.6",
     "highlight.js": "^11.6.0",

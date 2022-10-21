@@ -21,15 +21,32 @@
     </div>
 
     <div class="col">
-      <div class="col-header">底下热门模块</div>
-      <div class="row-content"></div>
+      <div class="row-module">
+        <div class="row-module-header">底下热门模块</div>
+        <div class="row-content">
+          <div class="card">
+            <div class="card-header">
+              <div class="text">前端</div>
+              <div class="right"></div>
+            </div>
+            <div class="card-main">
+              <div class=""></div>
+              <div class=""></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="col">
       <div class="col-header-spec">
         <div class="left">来自 PGCM 社区的内容</div>
-        <div class="right">选择你的偏好内容</div>
+        <div class="right">
+          <SvgIcon icon="allect" />
+          选择你的偏好内容
+        </div>
       </div>
+
       <div class="row-content">
         <div class="tabs">
           <div
@@ -42,12 +59,10 @@
           </div>
         </div>
         <div class="article-content">
-          <PCard
-            v-for="(item, index) in articleList"
-            :key="index"
-            :image="item.image"
-            @click="handleArticleDetail(item.id)"
-          >
+          <PCard v-for="(item, index) in articleList" :key="index" :image="item.image">
+            <template #header>
+              <div @click="handleArticleDetail(item.id)">{{ item.title }}</div>
+            </template>
             <div class="main">
               <div class="main-content">{{ item.disd }}</div>
               <div class="main-bottom">
@@ -56,9 +71,6 @@
                 <SvgIcon icon="allect">{{ item.collect }}</SvgIcon>
               </div>
             </div>
-            <template #header>
-              {{ item.title }}
-            </template>
           </PCard>
         </div>
       </div>
@@ -148,6 +160,14 @@
       collect: 100
     }
   ])
+
+  // 颜色对象
+  function Color(r: string | number, g: string | number, b: string | number) {
+    r = Math.floor(Math.random() * 255)
+    g = Math.floor(Math.random() * 255)
+    b = Math.floor(Math.random() * 255)
+    return 'rgba(' + r + ',' + g + ',' + b + ',0.8)'
+  }
 
   function handleType(type: number) {
     active.value = type

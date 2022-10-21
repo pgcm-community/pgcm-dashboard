@@ -15,5 +15,13 @@ export default {
   allect: '\ue90d',
   givelike: '\ue90e',
   eyes: '\ue90f',
-  back: '\ue911'
+  back: '\ue911',
+  next: '\ue912',
+  underline: '\ue913',
+  downloadClient: '\ue914',
+  notLock: '\ue915',
+  individuation: '\ue916',
+  report: '\ue917',
+  cloud: '\ue918',
+  cloudUP: '\ue919'
 }

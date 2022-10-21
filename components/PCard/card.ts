@@ -1,4 +1,4 @@
-export const Props = {
+const Props = {
   isAside: {
     type: Boolean,
     default: false
@@ -28,3 +28,5 @@ export const Props = {
     default: false
   }
 }
+
+export default Props

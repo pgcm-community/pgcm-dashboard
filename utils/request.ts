@@ -5,10 +5,14 @@ import { _AsyncData } from 'nuxt/dist/app/composables/asyncData'
 import { useFetch, useNuxtApp } from 'nuxt/app'
 
 const request = (url: string, options?: any): Promise<any> => {
-  // const { $config, $router } = useNuxtApp()
-  // const reqUrl = $config.baseURL + url
-  const reqUrl = url
-  console.log(options)
+  const { $config } = useNuxtApp()
+  const token = useCookie('pgcm_token')
+  const reqUrl = $config.public.baseURL + url
+  console.log('options------>', reqUrl, options)
+
+  options.headers = {
+    Authorization: token.value
+  }
 
   return new Promise((resolve, reject) => {
     useFetch(reqUrl, { ...options })

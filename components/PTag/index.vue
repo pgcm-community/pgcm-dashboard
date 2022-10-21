@@ -8,9 +8,15 @@
   </div>
 </template>
 
+<script lang="ts">
+  import Tags from './tag'
+
+  export const { Props, Emits } = Tags
+</script>
+
 <script setup lang="ts" name="PTag">
   import { computed } from 'vue'
-  import { Props, Emits } from './tag'
+
   import SvgIcon from '../SvgIcon'
 
   const props = defineProps(Props)

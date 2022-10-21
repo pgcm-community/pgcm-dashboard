@@ -2,12 +2,13 @@
 
 .aside-container {
   background: rgba(247, 247, 247, 1);
-  height: 100%;
+  height: 100vh;
 }
+
 .aside-main {
   padding: 40px 30px;
-  .header {
-  }
+  height: 100%;
+
   .title {
     display: flex;
     justify-content: space-between;
@@ -16,6 +17,7 @@
     font-weight: bold;
     height: 38px;
     margin-bottom: 23px;
+
     .icon {
       padding: 8px;
     }
@@ -57,6 +59,9 @@
 }
 
 .content {
+  height: 60vh;
+  max-height: 75%;
+
   &-header {
     display: flex;
     justify-content: space-between;
@@ -81,5 +86,25 @@
       font-size: 16px;
       font-weight: 400;
     }
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 40px;
+
+  &-user {
+    height: 38px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-supplement {
+    margin-top: 8px;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 12px;
+    background: #ffffff99;
   }
 }

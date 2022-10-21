@@ -1,7 +1,7 @@
 import type { PropType } from 'vue'
 import type { tagType, tagSize } from './interface'
 
-export const Props = {
+const Props = {
   type: {
     type: String as PropType<tagType>,
     default: (): tagType => 'info',
@@ -34,6 +34,11 @@ export const Props = {
   }
 } as const
 
-export const Emits = {
+const Emits = {
   close: (evt: Event): Event => evt
 } as const
+
+export default {
+  Props,
+  Emits
+}

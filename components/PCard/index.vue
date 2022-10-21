@@ -20,13 +20,17 @@
   </div>
 </template>
 
+<script lang="ts">
+  import Props from './card'
+
+  export const props = defineProps(Props)
+</script>
+
 <script setup lang="ts" name="PCard">
   import { ElImage } from 'element-plus'
   import type { ComputedRef } from 'vue'
-  import { Props } from './card'
-  import { computed } from 'vue'
 
-  const props = defineProps(Props)
+  import { computed } from 'vue'
 
   const classList: ComputedRef<object | string[]> = computed((): object | string[] => {
     const { isAside, avatar, image, padding, border, shadow, angle } = props
@@ -35,7 +39,12 @@
       'p-card',
       {
         'p-card-shadow': shadow,
-        'p-card-angle': angle
+        'p-card-angle': angle,
+        'p-card-border': border,
+        'p-card--aside': isAside,
+        [`p-card--${padding}`]: padding,
+        ['p-card--avatar']: avatar,
+        ['p-card--image']: image
       }
     ]
   })
