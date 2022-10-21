@@ -5,7 +5,7 @@
   "description": "PGCM Dashboard",
   "private": true,
   "scripts": {
-    "bootstrap": "pnpm i --shamefully-hoist",
+    "bootstrap": "pnpm i --shamefully-hoist --no-frozen-lockfile",
     "dev": "nuxt dev --mode dev",
     "start:prod": "nuxt dev --mode prod",
     "server": "node .output/server/index.mjs",
