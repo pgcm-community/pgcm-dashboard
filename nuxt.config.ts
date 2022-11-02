@@ -24,7 +24,7 @@ export default defineNuxtConfig({
       { hid: 'description', name: 'description', content: 'pgcm, 技术社区, 开发技术社区' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/logo.svg' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }]
   },
   alias: {
     '@/*': './*'

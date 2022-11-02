@@ -12,20 +12,20 @@
       </div>
 
       <div class="input-body" v-show="type === 1">
-        <el-input v-model="form.username" type="text" placeholder="请输入账号">
+        <el-input v-model="form.username" link placeholder="请输入账号">
           <template #prefix> </template>
         </el-input>
         <el-input v-model="form.password" show-password type="password" placeholder="请输入密码" />
       </div>
       <div v-show="type === 2">
-        <el-input type="text" placeholder="请输入手机号" />
-        <el-input type="text" placeholder="请输入验证码" />
+        <el-input link placeholder="请输入手机号" />
+        <el-input link placeholder="请输入验证码" />
       </div>
       <el-button class="login-button" type="primary" @click="handleLogin">登录</el-button>
 
       <div class="middle">
-        <el-button type="text">找回密码</el-button>
-        <el-button type="text">账号安全中心</el-button>
+        <el-button link>找回密码</el-button>
+        <el-button link>账号安全中心</el-button>
       </div>
 
       <el-divider />
@@ -35,16 +35,16 @@
         <div>
           <div class="icon-body">
             <div class="icon">
-              <el-image :src="Github" fit="fill" />
+              <el-image src="@/assets/svg/github.svg" fit="fill" />
             </div>
             <div class="icon">
-              <el-image :src="WeChat" />
+              <el-image src="@/assets/svg/wechat.svg" fit="fill" />
             </div>
             <div class="icon">
-              <el-image :src="Gitee" />
+              <el-image src="@/assets/svg/gitee.svg" />
             </div>
             <div class="icon">
-              <el-image :src="Weibo" />
+              <el-image src="@/assets/svg/weibo.svg" />
             </div>
           </div>
         </div>
@@ -66,15 +66,15 @@
 <script setup lang="ts">
   import { ref } from 'vue'
   import { ElButton, ElInput, ElDivider, ElImage } from 'element-plus'
-  import Github from '@/assets/svg/github.svg'
-  import WeChat from '@/assets/svg/wechat.svg'
-  import Gitee from '@/assets/svg/gitee.svg'
-  import Weibo from '@/assets/svg/weibo.svg'
-  import { login } from '../../composables/api'
+  import { login } from "@/composables/api"
 
   const show = ref<boolean>(false)
 
   const type = ref<number>(1)
+
+  definePageMeta({
+    layout: "login",
+  })
 
   const loginType = (data: number) => {
     type.value = data

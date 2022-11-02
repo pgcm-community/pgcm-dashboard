@@ -27,8 +27,8 @@
 </script>
 
 <script setup lang="ts" name="PCard">
-  import { ElImage } from 'element-plus'
   import type { ComputedRef } from 'vue'
+  import { ElImage } from 'element-plus'
 
   import { computed } from 'vue'
 
