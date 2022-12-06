@@ -12,7 +12,10 @@
     "moduleResolution": "node",
     "types": ["element-plus/global", "@pinia/nuxt"],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "~/*": ["./public/*"],
+      "#imports": [".nuxt/imports"]
     }
-  }
+  },
+  "exclude": ["node_modules", ".nuxt", "dist"]
 }

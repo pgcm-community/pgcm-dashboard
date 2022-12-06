@@ -59,7 +59,7 @@
   import { onMounted } from 'vue'
   import { ElAvatar, ElDivider } from 'element-plus'
   import { timestampFoDate } from '@/utils/tools'
-  import { useRouter } from 'nuxt/app'
+  import { useRouter } from '#imports'
 
   let testData = '## 你好'
   const router = useRouter()

@@ -5,8 +5,8 @@
         <div class="title">
           <span style="cursor: pointer" @click="handleHome">PGCM</span>
           <div class="icon">
-            <SvgIcon icon="search" size="22px" />
-            <!--            <Search />-->
+            <!--            <SvgIcon icon="search" size="22px" />-->
+            <Search />
           </div>
         </div>
         <div class="tag">
@@ -16,8 +16,13 @@
             :class="{ active: active === item.id, icon: true }"
             @click="handlePage(item)"
           >
-            <SvgIcon :icon="item.icon" size="18px" @click="handleType(item.id)">
-              <span v-show="active === item.id">{{ item.name }}</span>
+            <SvgIcon
+              :icon="item.icon"
+              size="16px"
+              :text="active === item.id ? item.name : ''"
+              @click="handleType(item.id)"
+            >
+              <!--              <span v-show="active === item.id">{{ item.name }}</span>-->
             </SvgIcon>
           </div>
         </div>
@@ -25,7 +30,7 @@
       <div class="content">
         <div class="content-header">
           <span>当下热门模块</span>
-          <SvgIcon icon="setting">所有模块</SvgIcon>
+          <SvgIcon icon="setting" @click="handleModules">所有模块</SvgIcon>
         </div>
         <div class="list">
           <div
@@ -34,12 +39,12 @@
             :key="index"
             @click="handleModulesChange(item)"
           >
-            <span style="cursor: pointer">{{ item.name }}</span>
+            <span>{{ item.name }}</span>
           </div>
         </div>
       </div>
 
-      <Login v-if="!store.$state.isLogin" class="login-div" />
+      <Login v-if="!store.$state.isLogin" class="login" />
 
       <div class="footer">
         <div class="footer-user">
@@ -51,11 +56,13 @@
         <div class="footer-supplement">
           <div class="bei">
             <a href="https://beian.miit.gov.cn">皖ICP备2022006484号</a>
-            Copyright 2022-present PGCM
+            2022 ProgrammerCommunity
           </div>
         </div>
       </div>
     </div>
+
+    <Search />
   </div>
 </template>
 
@@ -87,10 +94,11 @@
   ])
 
   onMounted(() => {
-    getModule()
+    // getModule()
   })
   // 回到首页
   function handleHome() {
+    console.log('回到首页')
     router.push('/')
   }
   const handleType = (type: number) => {
@@ -101,7 +109,18 @@
     router.push({})
   }
 
-  function handleModulesChange(row: any) {}
+  // 打开所有模块选择页面
+  function handleModules() {}
+
+  function handleModulesChange(row: any) {
+    console.log(row)
+    router.push({
+      path: '/modules',
+      query: {
+        id: row.id
+      }
+    })
+  }
 
   function getModule() {
     getDictForType(2).then((res: ResponseType) => {

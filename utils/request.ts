@@ -2,7 +2,7 @@
 // import type { Result, UploadFile } from '@/axios'
 import { ref } from 'vue'
 import { _AsyncData } from 'nuxt/dist/app/composables/asyncData'
-import { useFetch, useNuxtApp } from 'nuxt/app'
+import { useFetch, useNuxtApp } from '#imports'
 
 const request = (url: string, options?: any): Promise<any> => {
   const { $config } = useNuxtApp()

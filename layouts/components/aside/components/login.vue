@@ -9,19 +9,17 @@
         <span class="text2">我们希望这会带给你更好的体验</span>
       </div>
     </div>
-    <div class="button" @click="handleLoginShow">登录或注册 PGCM 账号</div>
+    <div class="button" @click="handleLogin">登录或注册 PC 社区账号</div>
   </div>
 </template>
 
 <script setup lang="ts">
-  import { useRouter } from 'nuxt/app'
+  import { useRouter } from '#imports'
 
   const router = useRouter()
 
-  function handleLoginShow() {
-    router.push({
-      name: 'login'
-    })
+  function handleLogin() {
+    router.push('/login')
   }
 </script>
 
@@ -43,11 +41,10 @@
         height: 32px;
         background: #40aafbff;
         border-radius: 50%;
-        margin: auto 0;
-        margin-right: 15px;
+        margin: auto 15px auto 0;
 
         .p-icon {
-          padding: 6px;
+          padding-top: 2px;
         }
       }
 

@@ -10,6 +10,7 @@ const lifecycle = process.env.npm_lifecycle_event
 const setName = process.env.GLOBAL_TITLE
 
 export default defineNuxtConfig({
+  ssr: true,
   runtimeConfig: {
     secret: process.env.VITE_BASE_ENV,
     public: {
@@ -27,18 +28,33 @@ export default defineNuxtConfig({
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }]
   },
   alias: {
-    '@/*': './*'
+    '@/*': './*',
+    '~/*': './public/*'
   },
   typescript: {
     strict: true
   },
   // build
   build: {
-    transpile: lifecycle === 'build' ? ['element-plus'] : []
+    transpile: lifecycle === 'build' ? ['element-plus'] : [],
+    terser: {
+      terserOptions: {
+        compress: {
+          drop_console: false // 生产环境中删除console
+        }
+      }
+    }
   },
-  buildModules: ['@pinia/nuxt'],
+  buildModules: ['@pinia/nuxt', '@nuxtjs/tailwindcss'],
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+    configPath: 'tailwind.config',
+    exposeConfig: false,
+    viewer: true,
+    injectPosition: 0
+  },
   // css
-  css: ['~/assets/scss/index.scss'],
+  css: ['~/assets/css/index.scss'],
   vite: {
     plugins: [
       VueSetupExtend(),

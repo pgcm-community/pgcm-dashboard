@@ -1,7 +1,9 @@
 <template>
   <div :class="['p-icon']" :style="{ color: color, 'font-size': size }" @click="onClick">
     <i>{{ icons[icon] }}</i>
-    <slot />
+    <div class="text" v-if="text">
+      {{ text }}
+    </div>
   </div>
 </template>
 
@@ -28,6 +30,10 @@
       type: String,
       required: true,
       default: ''
+    },
+    text: {
+      type: String,
+      default: ''
     }
   })
 
@@ -48,16 +54,19 @@
 
   .p-icon {
     font-family: 'p-icon' !important;
-    font-size: 16px;
     text-align: center;
-  }
 
-  i {
-    cursor: pointer;
-    line-height: 1;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      //flex: 0 0 auto;
+      cursor: pointer;
+      line-height: 1;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
   }
 </style>

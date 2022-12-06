@@ -1,62 +1,49 @@
 <template>
-  <teleport to="body" @click="handleClose">
-    <div class="search-container">
-      <div v-if="show" ref="modal" class="search-modal">
-        <div class="searchBar">
-          <input v-model="counter" type="text" @focus="handleInputFocus" />
+  <SvgIcon icon="search" size="22px" @click="handleOpen" />
+
+  <teleport to="body">
+    <div v-if="show" class="search-container">
+      <div ref="modal" class="search-modal">
+        <div class="searchBar" ref="searchBar">
+          <input v-model="counter" type="text" placeholder="Search" />
           <SvgIcon icon="search" size="23px" />
         </div>
 
-        <div v-show="isFocus" class="search-content">
+        <div class="search-content">
           <div class="startSearch">No recent searches</div>
         </div>
       </div>
+      <div class="mohu"></div>
+      <div class="mask"></div>
     </div>
   </teleport>
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue'
+  import { ref, onBeforeMount, onUnmounted } from 'vue'
   import PCard from '../PCard/index.vue'
 
   let modal = ref<HTMLElement>()
   const show = ref<boolean>(false)
+  const searchBar = ref<HTMLElement>()
 
-  function handleDocumentClick(e: Event) {
-    if (!show || !modal.value || !modal.value.contains(e.target)) return
-    show.value = false
+  // 添加esc 退出事件
+  function handleKeydown(e: KeyboardEvent) {
+    if (e.key === 'Escape') {
+      show.value = false
+    }
   }
 
-  const props = defineProps({
-    iconSize: {
-      type: String,
-      default: (): string => '22px'
-    }
+  onBeforeMount(() => {
+    document.addEventListener('keydown', handleKeydown)
   })
 
-  const emit = defineEmits({
-    open: (evt: Event): Event => evt
+  onUnmounted(() => {
+    document.removeEventListener('keydown', handleKeydown)
   })
-
-  const questionCount = ref<number>(1)
-  // 文本框获取焦点后展开
-  const isFocus = ref<boolean>(false)
-  const value = ref<string>('')
 
   function handleOpen() {
     show.value = true
-  }
-
-  const counter = useCookie('counter')
-
-  function handleInputFocus(evt: FocusEvent) {
-    counter.value = counter.value || Math.round(Math.random() * 1000)
-    console.log('获取到焦点了', evt)
-    isFocus.value = true
-  }
-
-  function handleClose() {
-    show.value = false
   }
 </script>
 

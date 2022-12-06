@@ -5,7 +5,7 @@
       <div class="col-content">
         <div class="col-bar">
           <div>当前热门问题</div>
-          <div>查看详细排行</div>
+          <div style="cursor: pointer" @click="router.push('/ranking')">查看详细排行</div>
         </div>
         <div class="col-main">
           <div v-for="(item, index) in ques" :key="index" class="issue-row">
@@ -79,7 +79,7 @@
 </template>
 
 <script setup lang="ts">
-  import { useRouter } from 'nuxt/app'
+  import { useRouter } from '#imports'
 
   const router = useRouter()
   const active = ref(1)

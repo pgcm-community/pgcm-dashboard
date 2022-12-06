@@ -33,8 +33,13 @@
 
   .icon {
     padding: 0 10px;
+    width: 97px;
     height: 100%;
     transition: all 250ms cubic-bezier(0.33, 1, 0.68, 1);
+
+    display: flex;
+    justify-content: center;
+
     &:hover {
       opacity: 1;
     }
@@ -42,13 +47,13 @@
   .p-icon {
     line-height: 46px;
 
-    span {
+    ::v-deep(.text) {
       font-size: $--font-size-base;
+      margin-left: 8px;
     }
   }
 
   .active {
-    width: 74px;
     background: rgba(255, 255, 255, 1);
     border: 0.3px solid rgba(161, 161, 161, 1);
     border-radius: 6px;
@@ -85,6 +90,14 @@
       padding: 12px 18px;
       font-size: 16px;
       font-weight: 400;
+    }
+    .col:hover {
+      opacity: 1;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 1);
+      border: 0.3px solid rgba(161, 161, 161, 0.6);
+      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04);
+      cursor: pointer;
     }
   }
 }

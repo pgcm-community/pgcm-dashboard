@@ -5,5 +5,5 @@
 <script setup lang="ts" name="Header"></script>
 
 <style scoped lang="scss">
-  @import './header.scss';
+  @import 'header';
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="pgcm-body">
+  <div class="pc-body">
     <aside>
       <PAside />
     </aside>

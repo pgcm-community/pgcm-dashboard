@@ -1,0 +1,22 @@
+.ranking {
+  padding: 40px;
+
+  &-border {
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  &-main {
+    display: flex;
+    height: 100%;
+
+    .col {
+      //flex: 1 1 auto;
+      width: 50%;
+      border-radius: 14px;
+      padding: 16px;
+      background: linear-gradient(90deg, rgba(23, 108, 255, 0.08) 0%, rgba(0, 89, 255, 0.02) 100%);
+    }
+  }
+}
