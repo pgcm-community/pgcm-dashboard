@@ -1,3 +1,4 @@
+import { defineNuxtRouteMiddleware, navigateTo } from '#imports';
 import { getUserInfo } from '@/api/user'
 import { userStore } from '@/stores/user'
 

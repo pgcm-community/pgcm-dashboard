@@ -2,11 +2,11 @@
 // import type { Result, UploadFile } from '@/axios'
 import { ref } from 'vue'
 import { _AsyncData } from 'nuxt/dist/app/composables/asyncData'
-import { useFetch, useNuxtApp } from '#imports'
+import { useCookie, useFetch, useNuxtApp } from "#imports";
 
 const request = (url: string, options?: any): Promise<any> => {
   const { $config } = useNuxtApp()
-  const token = useCookie('pgcm_token')
+  const token = useCookie('pc_token')
   const reqUrl = $config.public.baseURL + url
   console.log('options------>', reqUrl, options)
 

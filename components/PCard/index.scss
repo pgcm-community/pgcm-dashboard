@@ -7,7 +7,8 @@
   display: flex;
 
   .card-aside {
-    flex: 1 1 auto;
+    //flex: 1 1 auto;
+    flex-shrink: 0;
     margin-right: 20px;
 
     .el-image {

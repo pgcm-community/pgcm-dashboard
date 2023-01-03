@@ -3,7 +3,6 @@
 
   .header {
     margin-bottom: 20px;
-    font-size: 40px;
     font-weight: 700;
     display: flex;
 
@@ -13,10 +12,23 @@
   }
 
   .content {
+    height: 100%;
     display: grid;
     grid-template-columns: minmax(200px, 74%) 1fr;
 
     .user-body {
+      .sup {
+        padding: 16px;
+        background: radial-gradient(70.39% 0%, rgba(255, 140, 0, 0.5) 0%, rgba(255, 152, 26, 0.2) 49.86%, rgba(255, 195, 0, 0.2) 100%), rgba(255, 255, 255, 1);
+        .sup-button {
+          display: flex;
+          justify-content: center;
+          background: rgba(255, 255, 255, 1);
+          font-weight: 400;
+          letter-spacing: 0.26px;
+          padding: 10px 18px;
+        }
+      }
       .avatar-card {
         background: rgba(255, 255, 255, 1);
         border-radius: 16px;

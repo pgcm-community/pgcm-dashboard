@@ -60,7 +60,7 @@
 
         <div class="footer">
           <div class="left">
-            <span>没有 PGCM 账号?</span><br />
+            <span>没有 PC 社区账号?</span><br />
             <span>注册账号</span>
           </div>
           <div class="regier-button" @click="handleFlip">去注册</div>
@@ -69,7 +69,7 @@
 
       <div class="register-from" id="register-from">
         <div class="header">
-          <span>PGCM 注册</span>
+          <span>PC 社区注册</span>
           <span>属于开发者的交流社区</span>
         </div>
         <div class="from">

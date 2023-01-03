@@ -3,7 +3,7 @@
     <div class="aside-main">
       <div class="header">
         <div class="title">
-          <span style="cursor: pointer" @click="handleHome">PGCM</span>
+          <span style="cursor: pointer" @click="handleHome">PC 社区</span>
           <div class="icon">
             <!--            <SvgIcon icon="search" size="22px" />-->
             <Search />

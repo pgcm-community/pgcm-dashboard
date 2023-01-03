@@ -2,19 +2,30 @@
   <div class="page-container">
     <div class="col">
       <div class="col-header">主页</div>
-      <div class="col-content">
-        <div class="col-bar">
-          <div>当前热门问题</div>
-          <div style="cursor: pointer" @click="router.push('/ranking')">查看详细排行</div>
-        </div>
-        <div class="col-main">
-          <div v-for="(item, index) in ques" :key="index" class="issue-row">
-            <div class="issue-body">
-              <div :class="{ 'left-back': index < 3, left: true }">{{ index + 1 }}</div>
-              <div class="right">
-                {{ item.text }}
+      <div class="col-main">
+        <div class="col-content">
+          <div class="col-bar">
+            <div>当前热门问题</div>
+            <div style="cursor: pointer" @click="router.push('/ranking')">查看详细排行</div>
+          </div>
+          <div class="col-main">
+            <div v-for="(item, index) in ques" :key="index" class="issue-row">
+              <div class="issue-body">
+                <div :class="{ 'left-back': index < 3, left: true }">{{ index + 1 }}</div>
+                <div class="right">
+                  {{ item.text }}
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div class="right-body ml-1.5">
+          <span class="text-xl font-semibold tracking-wide">欢迎来到 Programmer Community 这里是你自由交流的平台。</span>
+          <span class="text-sm font-normal mt-1">我们欢迎你加入，向所有人贡献自己的智慧</span>
+
+          <div class="button">
+            <span>登录或注册 PC 社区账户</span>
           </div>
         </div>
       </div>
@@ -40,10 +51,10 @@
 
     <div class="col">
       <div class="col-header-spec">
-        <div class="left">来自 PGCM 社区的内容</div>
+        <div class="left">来自 PC社区的内容</div>
         <div class="right">
           <SvgIcon icon="allect" />
-          选择你的偏好内容
+          <span class="text-base font-normal ml-1.5 cursor-pointer">选择你的偏好内容</span>
         </div>
       </div>
 
@@ -58,8 +69,9 @@
             {{ item.title }}
           </div>
         </div>
+
         <div class="article-content">
-          <PCard v-for="(item, index) in articleList" :key="index" :image="item.image">
+          <PCard v-for="(item, index) in articleList" :key="index" :image="item.image ? item.image : false">
             <template #header>
               <div @click="handleArticleDetail(item.id)">{{ item.title }}</div>
             </template>
@@ -79,7 +91,7 @@
 </template>
 
 <script setup lang="ts">
-  import { useRouter } from '#imports'
+  import { useRouter, ref } from '#imports'
 
   const router = useRouter()
   const active = ref(1)
@@ -102,59 +114,59 @@
   const articleList = ref([
     {
       id: 1,
-      title: 'PGCM —— 一个全新的程序员社区',
-      disd: '欢迎来到 Programme Community ，这里是你自由交流的平台，与他人共享你的智慧，共同建设更好的开源世界。接下来就是示例文本了：刘东：微软研发集团的品牌、收入等对于研发人员的吸引力是可想而知的。但是，我感到，将3000多名全球顶尖的技术，这里是你自由交流的平台，与他人共享你的智慧，这里是你自由交流的平台，与他人共享你的智慧，这将3000多名全球',
+      title: 'PC 社区 —— 一个全新的程序员社区',
+      disd: '欢迎来到 Programmer Community ，这里是你自由交流的平台，与他人共享你的智慧，共同建设更好的开源世界。接下来就是示例文本了：刘东：微软研发集团的品牌、收入等对于研发人员的吸引力是可想而知的。但是，我感到，将3000多名全球顶尖的技术，这里是你自由交流的平台，与他人共享你的智慧，这里是你自由交流的平台，与他人共享你的智慧，这将3000多名全球',
       view: 801,
       give: 300,
       collect: 100,
-      image: 'https://xiaoli-wyy.oss-cn-hongkong.aliyuncs.com/%E5%86%85%E6%B5%8B.png'
+      image: 'https://cdn.jsdelivr.net/gh/XiaoLi-sach/source@main/images/%E5%86%85%E6%B5%8B.png'
     },
     {
       id: 2,
-      title: 'PGCM —— 一个全新的程序员社区',
-      disd: '欢迎来到 Programme Community ，这里是你自由交流的平台，与他人共享你的智慧，共同建设更好的开源世界。接下来就是示例文本了：刘东：微软研发集团的品牌、收入等对于研发人员的吸引力是可想而知的。但是，我感到，将3000多名全球顶尖的技术，这里是你自由交流的平台，与他人共享你的智慧，这里是你自由交流的平台，与他人共享你的智慧，这将3000多名全球',
+      title: 'PC 社区 —— 一个全新的程序员社区',
+      disd: '欢迎来到 Programmer Community ，这里是你自由交流的平台，与他人共享你的智慧，共同建设更好的开源世界。接下来就是示例文本了：刘东：微软研发集团的品牌、收入等对于研发人员的吸引力是可想而知的。但是，我感到，将3000多名全球顶尖的技术，这里是你自由交流的平台，与他人共享你的智慧，这里是你自由交流的平台，与他人共享你的智慧，这将3000多名全球',
       view: 802,
       give: 300,
       collect: 100,
-      image: 'https://xiaoli-wyy.oss-cn-hongkong.aliyuncs.com/%E5%86%85%E6%B5%8B.png'
+      image: 'https://cdn.jsdelivr.net/gh/XiaoLi-sach/source@main/images/%E5%86%85%E6%B5%8B.png'
     },
     {
       id: 3,
-      title: 'PGCM —— 一个全新的程序员社区',
-      disd: '欢迎来到 Programme Community ，这里是你自由交流的平台，与他人共享你的智慧，共同建设更好的开源世界。接下来就是示例文本了：刘东：微软研发集团的品牌、收入等对于研发人员的吸引力是可想而知的。但是，我感到，将3000多名全球顶尖的技术，这里是你自由交流的平台，与他人共享你的智慧，这里是你自由交流的平台，与他人共享你的智慧，这将3000多名全球',
+      title: 'PC 社区 —— 一个全新的程序员社区',
+      disd: '欢迎来到 Programmer Community ，这里是你自由交流的平台，与他人共享你的智慧，共同建设更好的开源世界。接下来就是示例文本了：刘东：微软研发集团的品牌、收入等对于研发人员的吸引力是可想而知的。但是，我感到，将3000多名全球顶尖的技术，这里是你自由交流的平台，与他人共享你的智慧，这里是你自由交流的平台，与他人共享你的智慧，这将3000多名全球',
       view: 803,
       give: 300,
       collect: 100,
-      image: 'https://xiaoli-wyy.oss-cn-hongkong.aliyuncs.com/%E5%86%85%E6%B5%8B.png'
+      image: 'https://cdn.jsdelivr.net/gh/XiaoLi-sach/source@main/images/%E5%86%85%E6%B5%8B.png'
     },
     {
       id: 4,
-      title: 'PGCM —— 一个全新的程序员社区',
-      disd: '欢迎来到 Programme Community ，这里是你自由交流的平台，与他人共享你的智慧，共同建设更好的开源世界。接下来就是示例文本了：刘东：微软研发集团的品牌、收入等对于研发人员的吸引力是可想而知的。但是，我感到，将3000多名全球顶尖的技术，这里是你自由交流的平台，与他人共享你的智慧，这里是你自由交流的平台，与他人共享你的智慧，这将3000多名全球',
+      title: 'PC 社区 —— 一个全新的程序员社区',
+      disd: '欢迎来到 Programmer Community ，这里是你自由交流的平台，与他人共享你的智慧，共同建设更好的开源世界。接下来就是示例文本了：刘东：微软研发集团的品牌、收入等对于研发人员的吸引力是可想而知的。但是，我感到，将3000多名全球顶尖的技术，这里是你自由交流的平台，与他人共享你的智慧，这里是你自由交流的平台，与他人共享你的智慧，这将3000多名全球',
       view: 800,
       give: 300,
       collect: 100
     },
     {
       id: 5,
-      title: 'PGCM —— 一个全新的程序员社区',
-      disd: '欢迎来到 Programme Community ，这里是你自由交流的平台，与他人共享你的智慧，共同建设更好的开源世界。接下来就是示例文本了：刘东：微软研发集团的品牌、收入等对于研发人员的吸引力是可想而知的。但是，我感到，将3000多名全球顶尖的技术，这里是你自由交流的平台，与他人共享你的智慧，这里是你自由交流的平台，与他人共享你的智慧，这将3000多名全球',
+      title: 'PC 社区 —— 一个全新的程序员社区',
+      disd: '欢迎来到 Programmer Community ，这里是你自由交流的平台，与他人共享你的智慧，共同建设更好的开源世界。接下来就是示例文本了：刘东：微软研发集团的品牌、收入等对于研发人员的吸引力是可想而知的。但是，我感到，将3000多名全球顶尖的技术，这里是你自由交流的平台，与他人共享你的智慧，这里是你自由交流的平台，与他人共享你的智慧，这将3000多名全球',
       view: 800,
       give: 300,
       collect: 100
     },
     {
       id: 6,
-      title: 'PGCM —— 一个全新的程序员社区',
-      disd: '欢迎来到 Programme Community ，这里是你自由交流的平台，与他人共享你的智慧，共同建设更好的开源世界。接下来就是示例文本了：刘东：微软研发集团的品牌、收入等对于研发人员的吸引力是可想而知的。但是，我感到，将3000多名全球顶尖的技术，这里是你自由交流的平台，与他人共享你的智慧，这里是你自由交流的平台，与他人共享你的智慧，这将3000多名全球',
+      title: 'PC 社区 —— 一个全新的程序员社区',
+      disd: '欢迎来到 Programmer Community ，这里是你自由交流的平台，与他人共享你的智慧，共同建设更好的开源世界。接下来就是示例文本了：刘东：微软研发集团的品牌、收入等对于研发人员的吸引力是可想而知的。但是，我感到，将3000多名全球顶尖的技术，这里是你自由交流的平台，与他人共享你的智慧，这里是你自由交流的平台，与他人共享你的智慧，这将3000多名全球',
       view: 800,
       give: 300,
       collect: 100
     },
     {
       id: 7,
-      title: 'PGCM —— 一个全新的程序员社区',
-      disd: '欢迎来到 Programme Community ，这里是你自由交流的平台，与他人共享你的智慧，共同建设更好的开源世界。接下来就是示例文本了：刘东：微软研发集团的品牌、收入等对于研发人员的吸引力是可想而知的。但是，我感到，将3000多名全球顶尖的技术，这里是你自由交流的平台，与他人共享你的智慧，这里是你自由交流的平台，与他人共享你的智慧，这将3000多名全球',
+      title: 'PC 社区 —— 一个全新的程序员社区',
+      disd: '欢迎来到 Programmer Community ，这里是你自由交流的平台，与他人共享你的智慧，共同建设更好的开源世界。接下来就是示例文本了：刘东：微软研发集团的品牌、收入等对于研发人员的吸引力是可想而知的。但是，我感到，将3000多名全球顶尖的技术，这里是你自由交流的平台，与他人共享你的智慧，这里是你自由交流的平台，与他人共享你的智慧，这将3000多名全球',
       view: 800,
       give: 300,
       collect: 100

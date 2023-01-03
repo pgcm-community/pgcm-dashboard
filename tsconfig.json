@@ -9,7 +9,9 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
+    "noImplicitAny": false,
     "moduleResolution": "node",
+    "outDir": "dist",
     "types": ["element-plus/global", "@pinia/nuxt"],
     "paths": {
       "@/*": ["./*"],

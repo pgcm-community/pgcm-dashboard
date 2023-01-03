@@ -42,10 +42,7 @@
         background: #40aafbff;
         border-radius: 50%;
         margin: auto 15px auto 0;
-
-        .p-icon {
-          padding-top: 2px;
-        }
+        padding: 5px 0;
       }
 
       .text-body {

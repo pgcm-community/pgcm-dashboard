@@ -9,43 +9,48 @@
 </template>
 
 <script lang="ts">
-  import Tags from './tag'
+  import Tags from './tag-sup'
+  import { defineComponent, computed } from "vue";
+  import SvgIcon from "@/components/SvgIcon/index.vue";
 
-  export const { Props, Emits } = Tags
-</script>
+  const { Props, Emits } = Tags
+  export default defineComponent({
+    name: "PTag",
+    components: SvgIcon,
+    props: Props,
+    emits: Emits,
+    setup(props, { emit }) {
+      let style = {
+        borderRadius: props.round
+      }
 
-<script setup lang="ts" name="PTag">
-  import { computed } from 'vue'
+      const cls = computed(() => [
+        'p-tag',
+        `p-tag-${props.type}`,
+        {
+          [`p-tag-${props.size}`]: props.size
+        }
+      ])
 
-  import SvgIcon from '../SvgIcon'
+      if (props.color || props.fontcolor) {
+        style = Object.assign(style, {
+          backgroundColor: props.color,
+          color: props.fontcolor || '#fff',
+          border: `1px solid ${props.color}`
+        })
+      }
 
-  const props = defineProps(Props)
-  const emits = defineEmits(Emits)
-
-  let style = {
-    borderRadius: props.round
-  }
-
-  const cls = computed(() => [
-    'p-tag',
-    `p-tag-${props.type}`,
-    {
-      [`p-tag-${props.size}`]: props.size
+      const handleClose = (evt: Event): void => {
+        evt.stopPropagation()
+        emit('close', evt)
+      }
+      return {
+        cls,
+        style,
+        handleClose
+      }
     }
-  ])
-
-  if (props.color || props.fontcolor) {
-    style = Object.assign(style, {
-      backgroundColor: props.color,
-      color: props.fontcolor || '#fff',
-      border: `1px solid ${props.color}`
-    })
-  }
-
-  const handleClose = (evt: Event): void => {
-    evt.stopPropagation()
-    emits('close', evt)
-  }
+  })
 </script>
 
 <style scoped lang="scss">

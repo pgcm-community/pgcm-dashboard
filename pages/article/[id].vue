@@ -1,22 +1,22 @@
 <template>
   <div class="article-main">
-    <div class="header">
+    <div class="header text-3xl leading-normal">
       <div class="icon">
-        <SvgIcon icon="back" size="52px" @click="handleBack" />
+        <SvgIcon icon="back" size="48px" @click="handleBack" />
       </div>
       这是一篇文章
     </div>
 
     <div class="content">
-      <div class="html-body">
-        <div class="show-html">
-          {{ showHtmlString }}
+      <div class="html-body mr-5">
+        <div v-html="showHtmlString" class="show-html">
+
         </div>
       </div>
       <div class="user-body">
-        <div>
-          <div>被{{}} 推荐</div>
-          <div>查看推荐合集</div>
+        <div class="sup rounded-2xl mb-5">
+          <div class="font-semibold text-2xl">被官方推荐</div>
+          <div class="sup-button rounded-sm">查看推荐合集</div>
         </div>
 
         <div class="avatar-card">
@@ -59,19 +59,20 @@
   import { onMounted } from 'vue'
   import { ElAvatar, ElDivider } from 'element-plus'
   import { timestampFoDate } from '@/utils/tools'
-  import { useRouter } from '#imports'
+  import { useRouter, ref } from '#imports'
+  import markdown from "@/utils/markdown";
 
   let testData = '## 你好'
   const router = useRouter()
-  let showHtmlString = ref('')
 
+  const showHtmlString = markdown.render(testData)
   const tagsList = ref([
     { id: 1, title: 'vue' },
     { id: 2, title: '缓存' }
   ])
 
   const detail = ref({
-    avatar: '凯伦',
+    avatar: '牛的',
     time: timestampFoDate(1659628227)
   })
 

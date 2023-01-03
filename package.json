@@ -1,8 +1,8 @@
 {
-  "name": "pgcm-dashboard",
+  "name": "pc-dashboard",
   "version": "0.0.1",
-  "author": "PGCM",
-  "description": "PGCM Dashboard",
+  "author": "zhaozhongyuan",
+  "description": "PC Dashboard",
   "private": true,
   "scripts": {
     "bootstrap": "pnpm i --shamefully-hoist --no-frozen-lockfile",
@@ -27,10 +27,14 @@
   "dependencies": {
     "@nuxt/kit": "3.0.0-rc.12",
     "@pinia/nuxt": "^0.4.0",
+    "@types/highlight.js": "^10.1.0",
+    "@types/markdown-it": "^12.2.3",
     "@vueuse/motion": "^2.0.0-beta.23",
     "animejs": "^3.2.1",
     "axios": "^0.27.2",
     "element-plus": "^2.2.6",
+    "highlight.js": "^11.7.0",
+    "markdown-it": "^13.0.1",
     "mockjs": "^1.1.0",
     "unplugin-auto-import": "^0.9.1",
     "unplugin-icons": "^0.14.6",

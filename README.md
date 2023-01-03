@@ -1,4 +1,4 @@
-## pgcm-dashboard
+## pc-dashboard
 
 #### 一个程序员社区的前台
 
